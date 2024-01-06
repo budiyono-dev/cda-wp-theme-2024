@@ -37,15 +37,36 @@
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <?php if (is_singular()) : ?>
-                            <article class="" <?php post_class(); ?>>
+                            <article class="cda-single-post" <?php post_class(); ?>>
+                                <div class="blok-title">
                                 <?php the_title('<h1 class="title-article">', '</h1>'); ?>
+                                <p class="time-post">
+                                    <time datetime="<?php echo the_time('Y-m-d') ?>">
+                                        Di buat pada :  <?php echo the_time('d F Y') ?>,
+                                    </time>
+                                    <time datetime="<?php echo the_modified_time('Y-m-d') ?>">
+                                        di sunting pada : <?php echo the_modified_time('d F Y') ?>
+                                    </time>
+                                </p>
+                                </div>
                                 <?php the_content(); ?>
                                 <?php wp_link_pages(); ?>
                             </article>
                         <?php else : ?>
                             <article class="card-post" <?php post_class(); ?>>
                                 <?php the_title('<h2 class="title-list"><a href="' . get_permalink() . '">', '</a></h2>'); ?>
-                                <?php echo '<p class="excerpt">' . get_the_excerpt() . '</p>' ?>
+                                <p class="excerpt">
+                                    <?php echo get_the_excerpt() ?>
+                                </p>
+                                <p class="time-post">
+                                    <time datetime="<?php echo the_time('Y-m-d') ?>">
+                                        Di buat pada :  <?php echo the_time('d F Y') ?>,
+                                    </time>
+                                    <time datetime="<?php echo the_modified_time('Y-m-d') ?>">
+                                        di sunting pada : <?php echo the_modified_time('d F Y') ?>
+                                    </time>
+                                </p>
+
                             </article>
                         <?php endif; ?>
                     <?php endwhile; ?>
