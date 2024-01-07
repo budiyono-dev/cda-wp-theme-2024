@@ -165,7 +165,7 @@ body {
     justify-content: space-around;
     border-bottom: 1px solid #1d1d1d;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 0 5%;
     background-color: var(--primary);
 }
 
@@ -174,7 +174,7 @@ body {
 }
 
 .brand {
-    display: inline-block;
+    display: block;
     font-weight: bold;
     font-size: 1.7rem;
     color: inherit;
@@ -189,19 +189,24 @@ body {
 }
 
 #main-navbar ul li {
-    display: inline-block;
+   float: left;
 }
 
 #main-navbar ul li a {
-    display: inline-block;
-    padding: 1rem 0.5rem 0.7rem 0.5rem;
+    display: block;
+    padding: 1rem 0.5rem 0.8rem 0.5rem;
     text-decoration: none;
-    /* border-bottom: 0.3rem solid transparent; */
-    transition: color 0.3s linear;
+    transition: border 0.3s linear;
+    font-size: 1.3rem;
+    border-bottom: 0.3rem solid transparent;
+    box-sizing: border-box;
 }
 
-#main-navbar ul li a:hover {
-    color: #43D7FF;
+#main-navbar ul li a:hover,
+#main-navbar ul li a:active
+{
+    //color: #43D7FF;
+    border-color: tomato;
 }
 
 /* card post */
@@ -220,15 +225,17 @@ body {
 }
 
 /* main content */
-article h2 a {
-    text-decoration: none;
-    color: black;
-}
-
 .title-list {
     margin: .5rem 0px;
     display: inline-block;
     font-size: 1.2rem;
+    & a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            color: tomato;
+        }
+    }
 }
 
 .footer {
@@ -255,11 +262,14 @@ article h2 a {
     width: 60%;
 }
 
+/* sisi kiri */
 .side-left-content {
     padding: 0 0.5rem;
     width: 20%;
+    border: black;
 }
 
+/* sisi kanan */
 .side-right-content {
     padding: 0 0.5rem;
     width: 20%;
@@ -327,12 +337,39 @@ article h2 a {
 }
 .wp-block-code {
     background-color: #eee;
-    padding: 0.8rem 0;
+    padding: 0.8rem 0 0.8rem 1rem;
     display: block;
-    font-family: monospace;
+    font-family: consolas, monospace;
     white-space-collapse: preserve;
     text-wrap: nowrap;
     margin: 1em 0px;
     font-size: 0.9rem;
-    line-height: 1;
+    line-height: 1.1;
+    border-left: 0.2rem solid tomato;
+}
+/* Footer Article */
+.footer-article {
+    border-top: 1px solid #1d1d1d;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    & .tags {
+        padding: 0.3rem 0;
+        & a {
+            color: inherit;
+            padding: 0.5rem 0.3rem;
+            &:hover {
+                color: tomato;
+            }
+        }
+    }
+    & .categories {
+        padding: 0.3rem 0;
+        & a {
+            color: inherit;
+            padding: 0.5rem 0.3rem;
+            &:hover {
+                color: tomato;
+            }
+        }
+    }
 }

@@ -41,6 +41,7 @@
                                 <div class="blok-title">
                                 <?php the_title('<h1 class="title-article">', '</h1>'); ?>
                                 <p class="time-post">
+                                    Oleh : <i><?php the_author(); ?></i>,
                                     <time datetime="<?php echo the_time('Y-m-d') ?>">
                                         Di buat pada :  <?php echo the_time('d F Y') ?>,
                                     </time>
@@ -51,6 +52,18 @@
                                 </div>
                                 <?php the_content(); ?>
                                 <?php wp_link_pages(); ?>
+                                <div class="footer-article">
+                                    <div class="categories">
+                                        <span>Kategori : </span><?php the_category(', '); ?>
+                                    </div>
+                                    <?php 
+                                        the_tags(
+                                            '<div class="tags"><span>Tags : </span>',
+                                            ', ',
+                                            '</div>'
+                                        ); 
+                                    ?>
+                                </div>
                             </article>
                         <?php else : ?>
                             <article class="card-post" <?php post_class(); ?>>
