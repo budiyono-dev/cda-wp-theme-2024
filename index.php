@@ -53,9 +53,11 @@
                                 <?php the_content(); ?>
                                 <?php wp_link_pages(); ?>
                                 <div class="footer-article">
+                                    <?php if(has_category()): ?>
                                     <div class="categories">
                                         <span>Kategori : </span><?php the_category(', '); ?>
                                     </div>
+                                    <?php endif; ?>
                                     <?php 
                                         the_tags(
                                             '<div class="tags"><span>Tags : </span>',
