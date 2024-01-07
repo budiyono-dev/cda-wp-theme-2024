@@ -51,40 +51,6 @@
                                 </p>
                                 </div>
                                 <?php the_content(); ?>
-                                <div class="footer-article">
-                                    <?php if(has_category()): ?>
-                                    <div class="categories">
-                                        <span>Kategori : </span><?php the_category(', '); ?>
-                                    </div>
-                                    <?php endif; ?>
-                                    <?php 
-                                        the_tags(
-                                            '<div class="tags"><span>Tags : </span>',
-                                            ', ',
-                                            '</div>'
-                                        ); 
-                                    ?>
-                                </div>
-                                <div class="pagination-single-post">
-                                    <?php previous_post_link('<div class="next-prev-flex prev-post">Sebelumnya%link</div>'); ?>
-                                    <?php next_post_link('<div class="next-prev-flex next-post">Berikutnya%link</div>'); ?>
-                                </div>
-                            </article>
-                        <?php else : ?>
-                            <article class="card-post" <?php post_class(); ?>>
-                                <?php the_title('<h2 class="title-list"><a href="' . get_permalink() . '">', '</a></h2>'); ?>
-                                <p class="excerpt">
-                                    <?php echo get_the_excerpt() ?>
-                                </p>
-                                <p class="time-post">
-                                    <time datetime="<?php the_time('Y-m-d') ?>">
-                                        Di buat pada :  <?php the_time('d F Y') ?>,
-                                    </time>
-                                    <time datetime="<?php the_modified_time('Y-m-d') ?>">
-                                        di sunting pada : <?php the_modified_time('d F Y') ?>
-                                    </time>
-                                </p>
-
                             </article>
                         <?php endif; ?>
                     <?php endwhile; ?>

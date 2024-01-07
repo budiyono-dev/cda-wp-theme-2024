@@ -147,6 +147,7 @@ table {
     --primary: #39424B;
     --white: #fff;
     --grey-shadow: #626262;
+    --grey-divider: #DCDCDE;
 }
 
 body {
@@ -163,7 +164,7 @@ body {
 .main-header {
     display: flex;
     justify-content: space-around;
-    border-bottom: 1px solid #1d1d1d;
+    border-bottom: 1px solid var(--grey-divider);
     align-items: center;
     padding: 0 5%;
     background-color: var(--primary);
@@ -239,7 +240,7 @@ body {
 }
 
 .footer {
-    border-top: 1px solid #1d1d1d;
+    border-top: 1px solid var(--grey-divider);
     background-color: var(--primary);
     text-align: center;
     padding: 1rem 0;
@@ -266,13 +267,14 @@ body {
 .side-left-content {
     padding: 0 0.5rem;
     width: 20%;
-    border: black;
+    color: transparent;
 }
 
 /* sisi kanan */
 .side-right-content {
     padding: 0 0.5rem;
     width: 20%;
+    color: transparent;
 }
 
 .pagination {
@@ -327,7 +329,7 @@ body {
 }
 .blok-title {
     margin-bottom: 0.5rem;
-    border-bottom: 0.1rem solid var(--primary);
+    border-bottom: 0.1rem solid var(--grey-divider);
 }
 .title-article {
     font-size: 1.5rem;
@@ -349,8 +351,9 @@ body {
 }
 /* Footer Article */
 .footer-article {
-    border-top: 1px solid #1d1d1d;
-    margin-top: 1rem;
+    border-top: 1px solid var(--grey-divider);
+    border-bottom: 1px solid var(--grey-divider);
+    margin: 1rem 0;
     padding: 0.5rem 0;
     & .tags {
         padding: 0.3rem 0;
@@ -367,6 +370,38 @@ body {
         & a {
             color: inherit;
             padding: 0.5rem 0.3rem;
+            &:hover {
+                color: tomato;
+            }
+        }
+    }
+}
+
+.pagination-single-post {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    & .next-prev-flex {
+        display: flex;
+        flex-direction: column
+    }
+    & .prev-post {
+        width: 50%;
+    }
+    & .next-post {
+        text-align: end;
+        width: 50%;
+    }
+
+    & .next-prev-flex {
+        & a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-decoration: none;
+            color: inherit;
+            padding: 0.5rem 0;
             &:hover {
                 color: tomato;
             }
