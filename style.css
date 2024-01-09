@@ -267,14 +267,12 @@ body {
 .side-left-content {
     padding: 0 0.5rem;
     width: 20%;
-    color: transparent;
 }
 
 /* sisi kanan */
 .side-right-content {
     padding: 0 0.5rem;
     width: 20%;
-    color: transparent;
 }
 
 .pagination {

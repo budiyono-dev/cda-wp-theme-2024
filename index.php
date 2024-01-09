@@ -31,7 +31,9 @@
 
         <main class="content">
             <section class="side-left-content">
-                <p>PENCARIAN</p>
+                <?php if(is_active_sidebar('main-sidebar')) : ?>
+                    <?php dynamic_sidebar('main-sidebar'); ?>
+                <?php endif;?>
             </section>
             <section class="main-content">
                 <?php if (have_posts()) : ?>
@@ -91,7 +93,9 @@
                 <?php endif; ?>
             </section>
             <section class="side-right-content">
-                <P>DAFTAR ISI</P>
+                <?php if(is_active_sidebar('secondary-sidebar')) : ?>
+                    <?php dynamic_sidebar('secondary-sidebar'); ?>
+                <?php endif;?>
             </section>
         </main>
         <?php the_posts_pagination(array('mid_size' => 2)); ?>

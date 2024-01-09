@@ -13,3 +13,24 @@ function register_menus() {
     );
 }
 add_action('init', 'register_menus');
+
+function cda_sidebar() {
+    register_sidebar(
+        array(
+            'name' => 'Primary Sidebar',
+            'id' => 'main-sidebar',
+            'before_title' => '<h4 class="widget-title">',
+            'after_title' => '</h4>'
+        )
+    );
+    
+    register_sidebar(
+        array(
+            'name' => 'Secondary Sidebar',
+            'id' => 'secondary-sidebar'
+        )
+    );
+
+}
+
+add_action('widgets_init', 'cda_sidebar');
