@@ -1,0 +1,48 @@
+
+class Custom_Title_Widget extends WP_Widget {
+    // Constructor function
+    public function __construct() {
+        parent::__construct(
+            'custom_title_widget',
+            'Custom Title Widget',
+            array('description' => 'A widget to display a custom title')
+        );
+    }
+
+    // Widget front-end display
+    public function widget($args, $instance) {
+        echo $args['before_widget'];
+
+        // Display widget title
+        $title = apply_filters('widget_title', $instance['title']);
+        if (!empty($title)) {
+            echo $args['before_title'] . $title . $args['after_title'];
+        }
+
+        echo $args['after_widget'];
+    }
+
+    // Widget back-end form
+    public function form($instance) {
+        $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
+        ?>
+        <p>
+            <!-- <label for="<?php echo $this->get_field_id('title'); ?>">Title:</label> -->
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>">
+        </p>
+        <?php
+    }
+
+    // Widget update
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+        return $instance;
+    }
+}
+
+// Register the widget
+function register_custom_title_widget() {
+    register_widget('Custom_Title_Widget');
+}
+add_action('widgets_init', 'register_custom_title_widget');
