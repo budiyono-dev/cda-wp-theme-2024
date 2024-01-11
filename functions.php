@@ -19,6 +19,7 @@ function cda_sidebar() {
         array(
             'name' => 'Primary Sidebar',
             'id' => 'main-sidebar',
+            'description' => 'sidebar sebelah kiri',
             'before_title' => '<h4 class="widget-title">',
             'after_title' => '</h4>'
         )
