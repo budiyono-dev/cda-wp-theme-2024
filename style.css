@@ -190,7 +190,7 @@ body {
 }
 
 #main-navbar ul li {
-   float: left;
+    float: left;
 }
 
 #main-navbar ul li a {
@@ -204,9 +204,8 @@ body {
 }
 
 #main-navbar ul li a:hover,
-#main-navbar ul li a:active
-{
-    //color: #43D7FF;
+#main-navbar ul li a:active {
+    /* color: #43D7FF; */
     border-color: tomato;
 }
 
@@ -230,9 +229,11 @@ body {
     margin: .5rem 0px;
     display: inline-block;
     font-size: 1.2rem;
+
     & a {
         text-decoration: none;
         color: inherit;
+
         &:hover {
             color: tomato;
         }
@@ -261,19 +262,87 @@ body {
 .main-content {
     padding: 0 0.5rem;
     width: 60%;
+
+    & p {
+        margin: 1rem 0;
+    }
 }
 
 /* sisi kiri */
-.side-left-content {
-    padding: 0 0.5rem;
+.side-left-content,
+.side-right-content {
+    padding: 1rem 1rem;
     width: 20%;
+    /* border: 0.1rem solid var(--grey-shadow); */
+    margin: 0.5rem 0.5rem;
+    /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0rem 0.1rem 0.3rem var(--grey-shadow); */
+    box-sizing: border-box;
+    /* & #loc-bar h2 {
+        margin: 0.5rem 0;
+    } */
+
+    & li {
+        list-style: none;
+        /* text-decoration: none; */
+        & a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 0.2rem 0.3rem;
+            transition: all .2s linear;
+            border-left: 0.2rem solid var(--primary);
+            &:hover {
+                color: tomato;
+                /* background-color: var(--primary); */
+                border-color: tomato;
+            }
+        }
+    }
+
+    & .wp-block-heading {
+        font-size: 1.1rem;
+        font-weight: bold;
+        /* margin-bottom: 0.5rem; */
+        /* margin: 0; */
+    }
+
+    & .wp-block-search__input {
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        /* color: tomato; */
+        /* background-color: aqua!important; */
+    }
+
+    & .wp-block-search__button {
+        /* padding: 0.5rem; */
+        border-radius: 0.3rem;
+        /* color: tomato; */
+        background-color: transparent;
+    }
+
+    & .widget_block 
+    /* & .widget_search ,
+    & .widget_recent_entries , */
+    /* & .wp-block-categories { */
+        {
+        margin: 0.5rem 0;
+    }
 }
 
 /* sisi kanan */
-.side-right-content {
-    padding: 0 0.5rem;
+/* .side-right-content {
+    padding: 1rem 1rem;
     width: 20%;
-}
+    margin: 0.5rem 0.5rem;
+    box-sizing: border-box;
+    & li{
+        list-style: none;
+    }
+} */
 
 .pagination {
     /* border: 1px solid black; */
@@ -281,40 +350,41 @@ body {
     margin: 2rem auto;
     text-align: center;
     font-size: 0.9rem;
+
+    & .nav-links a {
+        text-decoration: none;
+        color: inherit;
+        padding: 0.4rem 0.7rem;
+        border: 0.1rem solid var(--grey-shadow);
+        margin: 0.5rem 0;
+        border-radius: 0.2rem;
+        transition: 0.3s;
+    }
+
+    & .nav-links a:hover {
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border: 0.1rem solid var(--grey-shadow);
+        background-color: var(--grey-shadow);
+        margin: 0.5rem 0;
+        border-radius: 0.2rem;
+    }
+
+    & .nav-links span:hover {
+        cursor: not-allowed;
+    }
+
+    & .nav-links span {
+        text-decoration: none;
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        background-color: var(--grey-shadow);
+        border: 0.1rem solid var(--grey-shadow);
+        margin: 0.5rem 0;
+        border-radius: 0.2rem;
+    }
 }
 
-.pagination .nav-links a {
-    text-decoration: none;
-    color: inherit;
-    padding: 0.4rem 0.7rem;
-    border: 0.1rem solid var(--grey-shadow);
-    margin: 0.5rem 0;
-    border-radius: 0.2rem;
-}
-
-.pagination .nav-links a:hover {
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border: 0.1rem solid var(--grey-shadow);
-    background-color: var(--grey-shadow);
-    margin: 0.5rem 0;
-    border-radius: 0.2rem;
-    transition: 0.3s;
-}
-
-.pagination .nav-links span:hover {
-    cursor: not-allowed;
-}
-
-.pagination .nav-links span {
-    text-decoration: none;
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    background-color: var(--grey-shadow);
-    border: 0.1rem solid var(--grey-shadow);
-    margin: 0.5rem 0;
-    border-radius: 0.2rem;
-}
 .time-post {
     font-size: 0.8rem;
     padding: 0.2rem 0;
@@ -325,16 +395,19 @@ body {
     box-sizing: border-box;
     padding: 1rem 0.5rem;
 }
+
 .blok-title {
     margin-bottom: 0.5rem;
     border-bottom: 0.1rem solid var(--grey-divider);
 }
+
 .title-article {
     font-size: 1.5rem;
     font-weight: bold;
     box-sizing: border-box;
     padding: 0.5rem 0;
 }
+
 .wp-block-code {
     background-color: #eee;
     padding: 0.8rem 0 0.8rem 1rem;
@@ -347,27 +420,34 @@ body {
     line-height: 1.1;
     border-left: 0.2rem solid tomato;
 }
+
 /* Footer Article */
 .footer-article {
     border-top: 1px solid var(--grey-divider);
     border-bottom: 1px solid var(--grey-divider);
     margin: 1rem 0;
     padding: 0.5rem 0;
+
     & .tags {
         padding: 0.3rem 0;
+
         & a {
             color: inherit;
             padding: 0.5rem 0.3rem;
+
             &:hover {
                 color: tomato;
             }
         }
     }
+
     & .categories {
         padding: 0.3rem 0;
+
         & a {
             color: inherit;
             padding: 0.5rem 0.3rem;
+
             &:hover {
                 color: tomato;
             }
@@ -380,13 +460,16 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
     & .next-prev-flex {
         display: flex;
         flex-direction: column
     }
+
     & .prev-post {
         width: 50%;
     }
+
     & .next-post {
         text-align: end;
         width: 50%;
@@ -400,6 +483,7 @@ body {
             text-decoration: none;
             color: inherit;
             padding: 0.5rem 0;
+
             &:hover {
                 color: tomato;
             }
