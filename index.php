@@ -14,11 +14,14 @@
                             Di buat pada : <?php the_time('d F Y') ?>,
                         </time>
                         <time datetime="<?php the_modified_time('Y-m-d') ?>">
-                            di sunting pada : <?php the_modified_time('d F Y') ?>
+                            di sunting pada : <?php the_modified_time('d F Y') ?>,
                         </time>
+                            Oleh : <?php the_author(); ?>
                     </p>
                 </article>
             <?php endwhile; ?>
+        <?php else: ?>
+            <h2>Opps... Hasil Tidak Ditemukan...</h2>
         <?php endif; ?>
     </section>
     <?php get_template_part('inc/content','side-right');?>
