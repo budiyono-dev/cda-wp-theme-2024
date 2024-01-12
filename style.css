@@ -36,10 +36,14 @@ body {
     padding: 0 5%;
     background-color: var(--primary);
     box-sizing: border-box;
-}
 
-.main-header * {
-    color: var(--white);
+    & * {
+        color: var(--white);
+    }
+
+    & .menu-toggle {
+        display: none;
+    }
 }
 
 .brand {
@@ -53,29 +57,27 @@ body {
 .brand a {
     text-decoration: none;
 }
-
-#main-navbar ul {
-    list-style: none;
-}
-
-#main-navbar ul li {
-    float: left;
-}
-
-#main-navbar ul li a {
-    display: block;
-    padding: 1rem 0.5rem 0.8rem 0.5rem;
-    text-decoration: none;
-    transition: border 0.3s linear;
-    font-size: 1.3rem;
-    border-bottom: 0.3rem solid transparent;
-    box-sizing: border-box;
-}
-
-#main-navbar ul li a:hover,
-#main-navbar ul li a:active {
-    /* color: #43D7FF; */
-    border-color: tomato;
+#main-navbar {
+    & ul {
+        list-style: none;
+        & li {
+            float: left;
+            & a {
+                display: block;
+                padding: 1rem 0.5rem 0.8rem 0.5rem;
+                text-decoration: none;
+                transition: border 0.3s linear;
+                font-size: 1.3rem;
+                border-bottom: 0.3rem solid transparent;
+                box-sizing: border-box;
+                &:hover,
+                &:active {
+                    /* color: #43D7FF; */
+                    border-color: tomato;
+                }
+            }
+        }
+    }
 }
 
 /* card post */
@@ -370,7 +372,17 @@ body {
     }
 }
 
+.d-none {
+    display: none;
+}
 
+.h-0 {
+    height: 0;
+}
+
+.mh-100 {
+    max-height: 100% !important;
+}
 
 /*
 .wp-block-code {
@@ -387,3 +399,52 @@ body {
 }
 */
 /* Footer Article */
+
+.bar-ham {
+    width: 35px;
+    height: 5px;
+    background-color: var(--white);
+    margin: 6px 0;
+}
+
+/* =================== MOBILE CSS ===================== */
+
+@media only screen and (max-width: 600px) {
+
+    .side-left-content,
+    .side-right-content {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .main-header {
+        flex-direction: column;
+        align-items: end;
+        padding: 0.5rem 1rem;
+
+        & #main-navbar {
+            width: 100%;
+            max-height: 0px;
+            transition: max-height .3s;
+            & > ul {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+        
+        & .brand {
+            display: none;
+        }
+        & .menu-toggle {
+            display: block;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+    }
+
+}

@@ -18,6 +18,11 @@
                     <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
                 </p>
             <?php endif; ?>
+            <div class="menu-toggle">
+                <div class="bar-ham"></div>
+                <div class="bar-ham"></div>
+                <div class="bar-ham"></div>
+            </div>
             <?php
             wp_nav_menu([
                 'theme_location' => 'primary',
