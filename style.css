@@ -143,11 +143,12 @@ body {
     padding: 0 0.5rem;
     width: 50%;
     margin: 0 5%;
+    box-sizing: border-box;
 
     & p {
         margin: 1rem 0;
-        font-size: 1.3rem;
-        line-spacing: 1.1;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 }
 
@@ -280,19 +281,17 @@ body {
     padding: 1rem 0.5rem;
 
     & .blok-title {
-        /* margin-bottom: 0.5rem; */
+        /* margin-bottom: 0.5rem; 
         border-bottom: 0.1rem solid var(--grey-divider);
-
+        */
         & h1 {
-            margin: 0;
         }
     }
 
     & .time-post {
         font-size: 1rem;
-        /* padding: 0.1rem 0; */
-        /* margin: 0 0 0.5rem 0; */
-        /* font-family: 'Courier New', Courier, monospace */
+        border-top: 1px solid var(--grey-divider);
+        padding: 0.5rem 0;
     }
 
     & .title-article {
@@ -384,10 +383,20 @@ body {
     max-height: 100% !important;
 }
 
-/*
 .wp-block-code {
-    background-color: #eee;
-    padding: 0.8rem 0 0.8rem 1rem;
+    background-color: #f9f9fb;
+    padding: 0.8rem 1rem;
+    border-left: 0.3rem solid var(--primary);
+    overflow-x: auto;
+
+    &:hover {
+        border-left: 0.3rem solid tomato;
+    }
+    & code {
+        white-space: inherit;
+        line-height: 1.5;
+    }
+    /*padding: 0.8rem 0 0.8rem 1rem;
     display: block;
     font-family: consolas, monospace;
     white-space-collapse: preserve;
@@ -396,8 +405,9 @@ body {
     font-size: 0.9rem;
     line-height: 1.1;
     border-left: 0.2rem solid tomato;
+    */
 }
-*/
+
 /* Footer Article */
 
 .bar-ham {
@@ -422,7 +432,7 @@ body {
 
     .main-header {
         flex-direction: column;
-        align-items: end;
+        /* align-items: end; */
         padding: 0.5rem 1rem;
 
         & #main-navbar {
@@ -436,15 +446,22 @@ body {
                 width: 100%;
             }
         }
+
+        & .brand-menu {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            & .brand {
+            }
+            & .menu-toggle {
+                display: block;
+                font-size: 2.5rem;
+                cursor: pointer;
+            }
+        }
         
-        & .brand {
-            display: none;
-        }
-        & .menu-toggle {
-            display: block;
-            font-size: 2.5rem;
-            cursor: pointer;
-        }
     }
 
 }

@@ -9,6 +9,7 @@
     <?php wp_body_open(); ?>
     <div class="container">
         <header class="main-header">
+            <div class="brand-menu">
             <?php if (is_home()) : ?>
                 <h1 class="brand">
                     <a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
@@ -22,6 +23,7 @@
                 <div class="bar-ham"></div>
                 <div class="bar-ham"></div>
                 <div class="bar-ham"></div>
+            </div>
             </div>
             <?php
             wp_nav_menu([

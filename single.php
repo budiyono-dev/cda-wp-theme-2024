@@ -8,17 +8,17 @@
                     <article class="cda-single-post" <?php post_class(); ?>>
                         <div class="blok-title">
                             <?php the_title('<h1 class="title-article">', '</h1>'); ?>
-                            <p class="time-post">
-                                Oleh : <i><?php the_author(); ?></i>,
-                                <time datetime="<?php the_time('Y-m-d') ?>">
-                                    Di buat pada : <?php the_time('d F Y') ?>,
-                                </time>
-                                <time datetime="<?php the_modified_time('Y-m-d') ?>">
-                                    di sunting pada : <?php the_modified_time('d F Y') ?>
-                                </time>
-                            </p>
                         </div>
                         <?php the_content(); ?>
+                        <p class="time-post">
+                            Oleh : <?php the_author(); ?>,
+                            <time datetime="<?php the_time('Y-m-d') ?>">
+                                Di buat pada : <?php the_time('d F Y') ?>,
+                            </time>
+                            <time datetime="<?php the_modified_time('Y-m-d') ?>">
+                                di sunting pada : <?php the_modified_time('d F Y') ?>
+                            </time>
+                        </p>
                         <div class="footer-article">
                             <?php if (has_category()) : ?>
                                 <div class="categories">
