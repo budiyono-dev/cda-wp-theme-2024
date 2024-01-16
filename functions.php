@@ -48,3 +48,5 @@ function cda_shortcode_loc_bar() {
 
 add_shortcode('cda_loc_bar', 'cda_shortcode_loc_bar');
 
+
+

@@ -57,11 +57,14 @@ body {
 .brand a {
     text-decoration: none;
 }
+
 #main-navbar {
     & ul {
         list-style: none;
+
         & li {
             float: left;
+
             & a {
                 display: block;
                 padding: 1rem 0.5rem 0.8rem 0.5rem;
@@ -70,6 +73,7 @@ body {
                 font-size: 1.3rem;
                 border-bottom: 0.3rem solid transparent;
                 box-sizing: border-box;
+
                 &:hover,
                 &:active {
                     /* color: #43D7FF; */
@@ -118,18 +122,7 @@ body {
     }
 }
 
-.footer {
-    border-top: 1px solid var(--grey-divider);
-    background-color: var(--primary);
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 0.5rem;
-    width: 100%;
-}
 
-.footer * {
-    color: var(--white);
-}
 
 .content {
     display: flex;
@@ -159,7 +152,7 @@ body {
     width: 20%;
     box-sizing: border-box;
 
-    & li {
+    &>li {
         list-style: none;
 
         /* text-decoration: none; */
@@ -181,8 +174,14 @@ body {
             }
         }
 
-        & ul {
+        &>ul {
             padding: 0;
+            list-style: none;
+
+            &>li>ul {
+                list-style: none;
+                padding-left: 1.5rem;
+            }
         }
     }
 
@@ -207,28 +206,12 @@ body {
         background-color: transparent;
     }
 
-    & .widget_block
-
-    /* & .widget_search ,
-    & .widget_recent_entries , */
-    /* & .wp-block-categories { */
-        {
+    & .widget_block {
         margin: 0.5rem 0;
     }
 
 
 }
-
-/* sisi kanan */
-/* .side-right-content {
-    padding: 1rem 1rem;
-    width: 20%;
-    margin: 0.5rem 0.5rem;
-    box-sizing: border-box;
-    & li{
-        list-style: none;
-    }
-} */
 
 .pagination {
     /* border: 1px solid black; */
@@ -273,6 +256,60 @@ body {
     }
 }
 
+.footer {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    width: 100%;
+
+    & * {
+        color: var(--white);
+    }
+
+    & a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.3rem 0;
+        transition: color 0.3s;
+    }
+
+    & li {
+        list-style: none;
+    }
+
+    & .footer-categories {
+        display: flex;
+        padding: 1rem 2rem;
+
+        & ul {
+            padding: 0;
+            margin: 0.3rem 0;
+
+            &>li>a:hover {
+                color: tomato;
+            }
+        }
+
+        &>li {
+            flex: 1;
+            &>a {
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin: 0.2rem 0;
+                color: tomato;
+
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    & .copy {
+        text-align: center;
+    }
+}
+
+
 
 
 /* Single Article Style */
@@ -281,11 +318,11 @@ body {
     padding: 1rem 0.5rem;
 
     & .blok-title {
+
         /* margin-bottom: 0.5rem; 
         border-bottom: 0.1rem solid var(--grey-divider);
         */
-        & h1 {
-        }
+        & h1 {}
     }
 
     & .time-post {
@@ -392,10 +429,12 @@ body {
     &:hover {
         border-left: 0.3rem solid tomato;
     }
+
     & code {
         white-space: inherit;
         line-height: 1.5;
     }
+
     /*padding: 0.8rem 0 0.8rem 1rem;
     display: block;
     font-family: consolas, monospace;
@@ -439,7 +478,8 @@ body {
             width: 100%;
             max-height: 0px;
             transition: max-height .3s;
-            & > ul {
+
+            &>ul {
                 padding: 0;
                 display: flex;
                 flex-direction: column;
@@ -453,15 +493,23 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            & .brand {
-            }
+            & .brand {}
+
             & .menu-toggle {
                 display: block;
                 font-size: 2.5rem;
                 cursor: pointer;
             }
         }
-        
+
+    }
+
+    .footer {
+        & .footer-categories {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
     }
 
 }
