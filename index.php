@@ -24,7 +24,7 @@
             <h2>Opps... Hasil Tidak Ditemukan...</h2>
         <?php endif; ?>
     </section>
-    <?php get_template_part('inc/content','side-right');?>
+    <?php get_template_part('inc/content','side-right-home');?>
 </main>
 <?php the_posts_pagination(array('mid_size' => 2)); ?>
 <?php get_footer(); ?>

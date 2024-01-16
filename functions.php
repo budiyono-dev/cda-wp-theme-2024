@@ -15,6 +15,7 @@ function register_menus() {
     register_nav_menus(
         array(
             'primary' => 'Header Menu',
+            'secondary' => 'Footer Menu',
         )
     );
 }
@@ -25,16 +26,23 @@ function cda_sidebar() {
         array(
             'name' => 'Primary Sidebar',
             'id' => 'main-sidebar',
-            'description' => 'sidebar sebelah kiri',
-            'before_title' => '<h4 class="widget-title">',
-            'after_title' => '</h4>'
+            'description' => 'sidebar sebelah kiri'
         )
     );
     
     register_sidebar(
         array(
             'name' => 'Secondary Sidebar',
-            'id' => 'secondary-sidebar'
+            'id' => 'secondary-sidebar',
+            'description' => 'sidebar sebelah kanan'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Home Sidebar',
+            'id' => 'home-sidebar',
+            'description' => 'sidebar sebelah kanan home'
         )
     );
 
