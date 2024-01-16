@@ -1,14 +1,13 @@
 <div class="footer">
-    <nav class="footer-categories">
-    <?php wp_list_categories(
-        array(
-            'depth'     => 3,
-            'title_li'  => '',
-            'hide_empty' => 0,
-            'exclude'    => array( 1 )
-        )); 
+    <?php
+    wp_nav_menu([
+        'theme_location' => 'secondary',
+        'container_id'   => 'secondary-navbar',
+        'container'      => 'nav',
+        'fallback_cb'    => '__return_false',
+        'depth'          => 3,
+    ]);
     ?>
-    </nav>
     <footer class="copy">
             <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
         </footer>

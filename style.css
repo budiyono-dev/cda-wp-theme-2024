@@ -276,10 +276,7 @@ body {
         list-style: none;
     }
 
-    & .footer-categories {
-        display: flex;
-        padding: 1rem 2rem;
-
+    & #secondary-navbar {
         & ul {
             padding: 0;
             margin: 0.3rem 0;
@@ -289,16 +286,22 @@ body {
             }
         }
 
-        &>li {
-            flex: 1;
-            &>a {
-                font-size: 1.1rem;
-                font-weight: bold;
-                margin: 0.2rem 0;
-                color: tomato;
+        &>ul {
+            display: flex;
+            padding: 1rem 2rem;
 
-                &:hover {
-                    color: inherit;
+            &>li {
+                flex: 1;
+
+                &>a {
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    margin: 0.2rem 0;
+                    color: tomato;
+
+                    &:hover {
+                        color: inherit;
+                    }
                 }
             }
         }
@@ -505,10 +508,12 @@ body {
     }
 
     .footer {
-        & .footer-categories {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+        & #secondary-navbar {
+            &>ul {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
     }
 
