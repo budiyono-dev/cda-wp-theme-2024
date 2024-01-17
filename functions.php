@@ -11,6 +11,11 @@ function load_js(){
 }
 add_action('wp_enqueue_scripts', 'load_js');
 
+function load_dashicons_front_end() {
+    wp_enqueue_style( 'dashicons' );
+}
+add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
+
 function register_menus() {
     register_nav_menus(
         array(
@@ -55,6 +60,13 @@ function cda_shortcode_loc_bar() {
 }
 
 add_shortcode('cda_loc_bar', 'cda_shortcode_loc_bar');
+
+function my_theme_excerpt_more( $more ) {
+    return '&hellip;';
+}
+add_filter( 'excerpt_more', 'my_theme_excerpt_more' );
+
+
 
 
 

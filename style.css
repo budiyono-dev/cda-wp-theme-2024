@@ -7,10 +7,26 @@ Version: 1.0.0
 */
 /* ===== CDA CSS */
 :root {
-    --primary: #39424B;
+    /* --primary: #39424B;
     --white: #fff;
     --grey-shadow: #626262;
+    --grey-divider: #DCDCDE; */
+
+    --primary: #373f44;
+    --white: #fafaf6;
+    --secondary: #3ed19a;
+    --grey-shadow: #626262;
     --grey-divider: #DCDCDE;
+
+    /* palette 2 ok */
+    --aa:#373f44;
+    --bb:#fafaf6;
+    --cc: #3ed19a;
+
+    /* palette 4 */
+    --d:#ffffff;
+    --e:#0a070e;
+    --g:#007b53;
 }
 
 body {
@@ -76,8 +92,7 @@ body {
 
                 &:hover,
                 &:active {
-                    /* color: #43D7FF; */
-                    border-color: tomato;
+                    border-color: var(--secondary);
                 }
             }
         }
@@ -87,10 +102,9 @@ body {
 /* card post */
 .card-post {
     padding: 0.7rem 1rem;
-    border: 0.1rem solid var(--grey-shadow);
+    border: 0.1rem solid var(--primary);
     margin: 1.5rem 0;
     border-radius: 0.2rem;
-    /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); */
     box-shadow: 0rem 0.1rem 0.3rem var(--grey-shadow);
 
     /* main content */
@@ -104,7 +118,7 @@ body {
             color: inherit;
 
             &:hover {
-                color: tomato;
+                color: var(--secondary);
             }
         }
     }
@@ -154,8 +168,6 @@ body {
 
     &>li {
         list-style: none;
-
-        /* text-decoration: none; */
         & a {
             white-space: nowrap;
             overflow: hidden;
@@ -164,13 +176,12 @@ body {
             color: inherit;
             display: block;
             padding: 0.2rem 0.3rem;
-            transition: all .2s linear;
+            transition: all .3s;
             border-left: 0.2rem solid var(--primary);
 
             &:hover {
-                color: tomato;
-                /* background-color: var(--primary); */
-                border-color: tomato;
+                color: var(--secondary);
+                border-color: var(--secondary);
             }
         }
 
@@ -188,21 +199,15 @@ body {
     & .wp-block-heading {
         font-size: 1.1rem;
         font-weight: bold;
-        /* margin-bottom: 0.5rem; */
-        /* margin: 0; */
     }
 
     & .wp-block-search__input {
         padding: 0.5rem;
         border-radius: 0.3rem;
-        /* color: tomato; */
-        /* background-color: aqua!important; */
     }
 
     & .wp-block-search__button {
-        /* padding: 0.5rem; */
         border-radius: 0.3rem;
-        /* color: tomato; */
         background-color: transparent;
     }
 
@@ -214,8 +219,6 @@ body {
 }
 
 .pagination {
-    /* border: 1px solid black; */
-    /* padding: 1rem; */
     margin: 2rem auto;
     text-align: center;
     font-size: 0.9rem;
@@ -233,10 +236,8 @@ body {
     & .nav-links a:hover {
         color: var(--white);
         padding: 0.5rem 1rem;
-        /* border: 0.1rem solid var(--grey-shadow); */
-        /* background-color: var(--grey-shadow); */
-        border: 0.1rem solid tomato;
-        background-color: tomato;
+        border: 0.1rem solid var(--secondary);
+        background-color: var(--secondary);
         margin: 0.5rem 0;
         border-radius: 0.2rem;
     }
@@ -282,7 +283,7 @@ body {
             margin: 0.3rem 0;
 
             &>li>a:hover {
-                color: tomato;
+                color: var(--secondary);
             }
         }
 
@@ -297,7 +298,7 @@ body {
                     font-size: 1.1rem;
                     font-weight: bold;
                     margin: 0.2rem 0;
-                    color: tomato;
+                    color: var(--secondary);
 
                     &:hover {
                         color: inherit;
@@ -319,14 +320,6 @@ body {
 .cda-single-post {
     box-sizing: border-box;
     padding: 1rem 0.5rem;
-
-    & .blok-title {
-
-        /* margin-bottom: 0.5rem; 
-        border-bottom: 0.1rem solid var(--grey-divider);
-        */
-        & h1 {}
-    }
 
     & .time-post {
         font-size: 1rem;
@@ -355,7 +348,7 @@ body {
                 padding: 0.5rem 0.3rem;
 
                 &:hover {
-                    color: tomato;
+                    color: var(--secondary);
                 }
             }
         }
@@ -368,7 +361,7 @@ body {
                 padding: 0.5rem 0.3rem;
 
                 &:hover {
-                    color: tomato;
+                    color: var(--secondary);
                 }
             }
         }
@@ -404,10 +397,32 @@ body {
                 padding: 0.5rem 0;
 
                 &:hover {
-                    color: tomato;
+                    color: var(--secondary);
                 }
             }
         }
+    }
+}
+
+.home-page {
+    width: 80%;
+    & .tags {
+        & * {
+            color: var(--secondary);
+        }
+        & span {
+            padding-right: 0.5rem;
+        }
+        & a {
+            padding: 0 0.5rem;
+            text-decoration: none;
+            transition: color 0.5s;
+            font-size: 0.9rem;
+            &:hover {
+                color: inherit;
+            }
+        }
+
     }
 }
 
@@ -430,28 +445,16 @@ body {
     overflow-x: auto;
 
     &:hover {
-        border-left: 0.3rem solid tomato;
+        border-left: 0.3rem solid var(--secondary);
     }
 
     & code {
         white-space: inherit;
         line-height: 1.5;
     }
-
-    /*padding: 0.8rem 0 0.8rem 1rem;
-    display: block;
-    font-family: consolas, monospace;
-    white-space-collapse: preserve;
-    text-wrap: nowrap;
-    margin: 1em 0px;
-    font-size: 0.9rem;
-    line-height: 1.1;
-    border-left: 0.2rem solid tomato;
-    */
 }
 
 /* Footer Article */
-
 .bar-ham {
     width: 35px;
     height: 5px;
@@ -496,8 +499,6 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            & .brand {}
-
             & .menu-toggle {
                 display: block;
                 font-size: 2.5rem;
@@ -516,5 +517,4 @@ body {
             }
         }
     }
-
 }
