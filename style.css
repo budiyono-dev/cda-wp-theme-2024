@@ -85,13 +85,14 @@ body {
                 display: block;
                 padding: 1rem 0.5rem 0.8rem 0.5rem;
                 text-decoration: none;
-                transition: border 0.3s linear;
+                transition: all 0.3s;
                 font-size: 1.3rem;
                 border-bottom: 0.3rem solid transparent;
                 box-sizing: border-box;
 
                 &:hover,
                 &:active {
+                    color: var(--secondary);
                     border-color: var(--secondary);
                 }
             }
