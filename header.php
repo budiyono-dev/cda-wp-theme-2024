@@ -3,6 +3,7 @@
 
 <head>
     <?php wp_head(); ?>
+    <meta name="robots" content="index, follow, max-image-preview:large">
 </head>
 
 <body <?php body_class(); ?>>
