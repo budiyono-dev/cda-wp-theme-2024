@@ -129,22 +129,26 @@ body {
 
     &>.header-home-page {
 
-        & .search-form { 
-            & > .search-field,
-            & > .search-submit{
+        & .search-form {
+
+            &>.search-field,
+            &>.search-submit {
                 font-size: 1rem;
                 box-sizing: border-box;
                 border-radius: 0.2rem;
                 border: 1px solid var(--primary);
             }
-            & > .search-field {
+
+            &>.search-field {
                 padding: 0.3rem 0.5rem;
             }
-            & > .search-submit{
+
+            &>.search-submit {
                 padding: 0.3rem 1rem;
                 background-color: var(--primary);
                 color: var(--white);
                 transition: color 0.3s;
+
                 &:hover {
                     cursor: pointer;
                     color: var(--secondary);
@@ -216,6 +220,7 @@ body {
                 text-decoration: none;
                 color: inherit;
                 transition: color 0.3s;
+
                 &:hover {
                     color: var(--secondary);
                 }
@@ -426,12 +431,41 @@ body {
 }
 
 
+& .cda-loc-container {
+    & .cda-loc-header {
+        font-size: 1.1rem;
+    }
 
+    &>ul {
+        padding: 0;
+        margin: 0;
+        &>li {
+
+            list-style: none;
+
+            &>a {
+                color: inherit;
+                text-decoration: none;
+                border-left: 0.2rem solid var(--primary);
+                transition: all .3s;
+                padding: 0.2rem 0.3rem;
+                &:hover{
+                    border-color: var(--secondary);
+                    color: var(--secondary);
+                }
+            }
+        }
+    }
+}
 
 /* Single Article Style */
 .cda-single-post {
     box-sizing: border-box;
     padding: 1rem 0.5rem;
+
+    &>.cda-loc-container {
+        display: none;
+    }
 
     & .time-post {
         font-size: 1rem;
@@ -565,6 +599,11 @@ body {
 
     .main-content {
         width: 100%;
+        &>.cda-single-post{
+            &>.cda-loc-container {
+                display: block;
+            }
+        }
     }
 
     .main-header {
