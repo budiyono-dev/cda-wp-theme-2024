@@ -274,7 +274,12 @@ body {
 
 
 }
-
+.not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 /* sisi kiri */
 .side-left-content,
 .side-right-content {
