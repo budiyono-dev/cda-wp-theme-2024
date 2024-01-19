@@ -11,11 +11,6 @@ function load_js(){
 }
 add_action('wp_enqueue_scripts', 'load_js');
 
-function load_dashicons_front_end() {
-    wp_enqueue_style( 'dashicons' );
-}
-add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
-
 function register_menus() {
     register_nav_menus(
         array(

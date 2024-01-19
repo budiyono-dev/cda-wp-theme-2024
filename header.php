@@ -24,6 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
     <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="description" content="index, follow, max-image-preview:large">
     <title><?php echo $title ?></title>
 </head>
 
