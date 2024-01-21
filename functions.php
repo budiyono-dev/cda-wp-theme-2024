@@ -57,6 +57,7 @@ function cda_shortcode_loc_bar() {
 add_shortcode('cda_loc_bar', 'cda_shortcode_loc_bar');
 
 function my_theme_excerpt_more( $more ) {
+    global $post;
     return '&hellip;'. '<a href="'. get_permalink($post->ID) . '">'.__('Baca selengkapnya').'</a>';
 }
 add_filter( 'excerpt_more', 'my_theme_excerpt_more' );
