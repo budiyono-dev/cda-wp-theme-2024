@@ -6,9 +6,7 @@
             <?php while (have_posts()) : the_post(); ?>
                 <?php if (is_singular()) : ?>
                     <article class="cda-single-post" <?php post_class(); ?>>
-                        <div class="blok-title">
-                            <?php the_title('<h1 class="title-article">', '</h1>'); ?>
-                        </div>
+                        <?php the_title('<h1 class="title-article">', '</h1>'); ?>
                         <?php the_content(); ?>
                         <p class="time-post">
                             Oleh : <?php the_author(); ?>,
