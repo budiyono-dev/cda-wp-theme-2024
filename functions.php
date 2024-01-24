@@ -1,13 +1,13 @@
 <?php
 
 function enqueue_styles() {
-    wp_register_style('cda-style', get_template_directory_uri() . '/assets/css/style.css', array(), false);
+    wp_register_style('cda-style', get_template_directory_uri() . '/dist/css/style.css', array(), false);
     wp_enqueue_style('cda-style');
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
 function load_js(){	
-    wp_register_script('main', get_template_directory_uri() . '/assets/js/index.js', array(), false, true);
+    wp_register_script('main', get_template_directory_uri() . '/dist/js/index.min.js', array(), false, true);
     wp_enqueue_script('main');
 }
 add_action('wp_enqueue_scripts', 'load_js');

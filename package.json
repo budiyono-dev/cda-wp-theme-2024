@@ -1,0 +1,23 @@
+{
+  "name": "cda-wp-theme-2024",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "postcss": "npx postcss assets/css/style.css > dist/style.css",
+    "prod": "rm -rf dist && webpack --mode production && npx postcss assets/css/style.css > dist/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^6.0.3",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "terser": "^5.27.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
