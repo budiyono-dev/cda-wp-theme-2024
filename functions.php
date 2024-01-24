@@ -1,12 +1,13 @@
 <?php
 
 function enqueue_styles() {
-    wp_enqueue_style('cda-style', get_stylesheet_uri());
+    wp_register_style('cda-style', get_template_directory_uri() . '/assets/css/style.css', array(), false);
+    wp_enqueue_style('cda-style');
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
 function load_js(){	
-    wp_register_script('main', get_template_directory_uri() . '/js/index.js', 'jquery', false, true);
+    wp_register_script('main', get_template_directory_uri() . '/assets/js/index.js', array(), false, true);
     wp_enqueue_script('main');
 }
 add_action('wp_enqueue_scripts', 'load_js');
@@ -49,12 +50,6 @@ function cda_sidebar() {
 }
 
 add_action('widgets_init', 'cda_sidebar');
-
-function cda_shortcode_loc_bar() {
-    if(is_single()) return '<li id="loc-bar"><h2 class="wp-block-heading">In this article</h2></li>';
-}
-
-add_shortcode('cda_loc_bar', 'cda_shortcode_loc_bar');
 
 function my_theme_excerpt_more( $more ) {
     global $post;
