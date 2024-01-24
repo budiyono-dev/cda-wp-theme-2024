@@ -562,22 +562,6 @@ body {
     max-height: 100% !important;
 }
 
-.wp-block-code {
-    background-color: #f9f9fb;
-    padding: 0.8rem 1rem;
-    border-left: 0.3rem solid var(--primary);
-    overflow-x: auto;
-
-    &:hover {
-        border-left: 0.3rem solid var(--secondary);
-    }
-
-    & code {
-        white-space: inherit;
-        line-height: 1.5;
-    }
-}
-
 /* Footer Article */
 .bar-ham {
     width: 35px;
