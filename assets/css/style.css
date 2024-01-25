@@ -570,6 +570,29 @@ body {
     margin: 6px 0;
 }
 
+.wp-block-create-block-cda-code {
+    position: relative;
+    & > .cda-copy-code{
+        display: block;
+        position: absolute;
+        right: 0;
+        margin: 0.2rem;
+        padding: 0.3rem 0.7rem;
+        color: var(--white);
+        border: 2px solid var(--link-primary);
+        border-radius: 0.2rem;
+        background-color: var(--link-primary);
+        transition: all 0.2s;
+        &:hover {
+            cursor: pointer;
+            background-color: var(--link-secondary);
+        }
+    }
+    &> pre>code {
+        border-radius: 0.2rem;
+    }
+}
+
 /* =================== MOBILE CSS ===================== */
 
 @media only screen and (max-width: 600px) {
