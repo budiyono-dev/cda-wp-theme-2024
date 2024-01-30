@@ -59,11 +59,26 @@ body {
         display: none;
     }
 
+    
+    & .brand {
+        display: block;
+        font-weight: bold;
+        font-size: 1.7rem;
+        color: inherit;
+        margin: 0;
+        padding: 1rem;
+        & a {
+            text-decoration: none;
+        }
+    }
+
+
     &>#main-navbar {
         &>ul {
             list-style: none;
             display: flex;
             margin: 0;
+            padding: 0;
 
             & li {
                 & a {
@@ -82,20 +97,6 @@ body {
         }
     }
 }
-
-.brand {
-    display: block;
-    font-weight: bold;
-    font-size: 1.7rem;
-    color: inherit;
-    margin: 0;
-}
-
-.brand a {
-    text-decoration: none;
-}
-
-
 
 /* card post */
 
@@ -414,18 +415,20 @@ body {
     }
 
     & #secondary-navbar {
+        padding: 1rem 10%;
+
         & ul {
             padding: 0;
-            margin: 0.3rem 0;
+            margin: 0;
         }
 
         &>ul {
             display: flex;
-            padding: 1rem 2rem;
+            flex-wrap: wrap;
 
             &>li {
-                flex: 1;
-
+                flex: 1 0 25%;
+                
                 &>a {
                     font-size: 1.1rem;
                     font-weight: bold;
@@ -604,6 +607,7 @@ body {
 
     .main-content {
         width: 100%;
+        padding: 0 1rem;
 
         &>.cda-single-post {
             &>.cda-loc-container {
@@ -664,29 +668,13 @@ body {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+
+                & ul {
+                    margin: 1rem 0;;
+                }
             }
         }
     }
 }
 
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --cda-black: #FFF;
-        --primary: #313131;
-        --primary2: #002230;
-        --white: #23292F;
-        --secondary: #090909;
-        --info: #76c2e0;
-        --link-primary: #1a749e;
-        --link-secondary: #3ba2ce;
-        --grey-shadow: #626262;
-        --grey-divider: #DCDCDE;
-        --grey-font: #4A4D4F;
-    }
-    * {
-        color: var(--wp--preset--color--white) !important;
-    }
-    .wp-block-code {
-        background-color: #343434;
-    }
-} */
+

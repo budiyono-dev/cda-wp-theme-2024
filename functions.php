@@ -1,13 +1,21 @@
 <?php
 
+function get_cda_env(){
+    return [
+        'mode' => 'development', 
+    ];
+}
+
 function enqueue_styles() {
-    wp_register_style('cda-style', get_template_directory_uri() . '/dist/style.css', array(), false);
+    $dir = get_cda_env()['mode'] === 'development' ? '/assets/css/style.css' : '/dist/style.css'; 
+    wp_register_style('cda-style', get_template_directory_uri() . $dir, array(), false);
     wp_enqueue_style('cda-style');
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
 function load_js(){	
-    wp_register_script('main', get_template_directory_uri() . '/dist/index.min.js', array(), false, true);
+    $dir = get_cda_env()['mode'] === 'development' ? '/assets/js/index.js' : '/dist/index.min.js'; 
+    wp_register_script('main', get_template_directory_uri() . $dir, array(), false, true);
     wp_enqueue_script('main');
 }
 add_action('wp_enqueue_scripts', 'load_js');
