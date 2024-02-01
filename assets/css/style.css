@@ -256,6 +256,7 @@ body {
             display: flex;
             padding: 0.2rem;
             box-sizing: border-box;
+            align-items: center;
 
             & * {
                 color: var(--primary);
