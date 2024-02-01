@@ -59,7 +59,7 @@ body {
         display: none;
     }
 
-    
+
     & .brand {
         display: block;
         font-weight: bold;
@@ -67,6 +67,7 @@ body {
         color: inherit;
         margin: 0;
         padding: 1rem;
+
         & a {
             text-decoration: none;
         }
@@ -260,23 +261,36 @@ body {
                 color: var(--primary);
             }
 
-            & span {
-                display: block;
-                padding-right: 0.5rem;
-                height: 15px;
-                width: 15px;
-            }
-
-            & a {
-                padding: 0 0.5rem;
-                text-decoration: none;
-                font-size: 0.9rem;
-
-                &:hover {
-                    text-decoration: underline;
+            & .icon-tag {
+                & span {
+                    display: block;
+                    padding-right: 0.5rem;
+                    height: 15px;
+                    width: 15px;
                 }
             }
 
+            &>ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-wrap: wrap;
+
+                &>li {
+                    & a {
+                        padding: 0 0.5rem;
+                        text-decoration: none;
+                        font-size: 0.9rem;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -428,7 +442,7 @@ body {
 
             &>li {
                 flex: 1 0 25%;
-                
+
                 &>a {
                     font-size: 1.1rem;
                     font-weight: bold;
@@ -575,7 +589,8 @@ body {
 
 .wp-block-create-block-cda-code {
     position: relative;
-    & > .cda-copy-code{
+
+    &>.cda-copy-code {
         display: block;
         position: absolute;
         right: 0;
@@ -586,12 +601,14 @@ body {
         border-radius: 0.2rem;
         background-color: var(--link-primary);
         transition: all 0.2s;
+
         &:hover {
             cursor: pointer;
             background-color: var(--link-secondary);
         }
     }
-    &> pre>code {
+
+    &>pre>code {
         border-radius: 0.2rem;
     }
 }
@@ -670,11 +687,10 @@ body {
                 text-align: center;
 
                 & ul {
-                    margin: 1rem 0;;
+                    margin: 1rem 0;
+                    ;
                 }
             }
         }
     }
 }
-
-
