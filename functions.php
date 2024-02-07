@@ -25,6 +25,7 @@ function register_menus() {
         array(
             'primary' => 'Header Menu',
             'secondary' => 'Footer Menu',
+            'home_slide_menu' => 'Home Slide Menu',
         )
     );
 }
@@ -64,6 +65,20 @@ function my_theme_excerpt_more( $more ) {
     return '&hellip;'. '<a href="'. get_permalink($post->ID) . '">'.__('Baca selengkapnya').'</a>';
 }
 add_filter( 'excerpt_more', 'my_theme_excerpt_more' );
+
+function cda_fallback_category_menu_home() {
+    echo '<ul>';
+    wp_list_categories(
+        array(
+            'depth'     => 3,
+            'title_li'  => '',
+            'hide_empty' => 0,
+            'exclude'    => array( 1 )
+        )
+    ); 
+    
+    echo '</ul>';
+}
 
 
 
