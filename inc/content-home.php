@@ -7,16 +7,15 @@
                 <?php get_search_form(); ?>
             </div>
             <nav class="categories">
-                <ul>
-                <?php wp_list_categories(
-                    array(
-                        'depth'     => 3,
-                        'title_li'  => '',
-                        'hide_empty' => 0,
-                        'exclude'    => array( 1 )
-                    )); 
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'home_slide_menu',
+                    'container_id'   => '',
+                    'container'      => '', 
+                    'fallback_cb'    => 'cda_fallback_category_menu_home',
+                    'depth'          => 1,
+                ]);
                 ?>
-                </ul>
             </nav>
         </div>
         <?php if (have_posts()) : ?>
