@@ -464,6 +464,10 @@ body {
         display: none;
     }
 
+    & li {
+        list-style: none;
+    }
+
     &>ul {
         padding: 0;
         margin: 0;
@@ -481,6 +485,10 @@ body {
                     color: inherit;
                     text-decoration: underline;
                 }
+            }
+
+            &>ul{
+                padding-left: 0.5rem;
             }
         }
     }
@@ -629,15 +637,29 @@ body {
 
         &>.cda-single-post {
             &>.cda-loc-container {
+                border: 1px solid var(--link-primary);
                 display: block;
+                padding: 0.5rem;
+                border-radius: 0.3rem;
 
-                & ul,
-                &li {
-                    list-style: decimal;
+                & ul, & li {
+                    list-style: none;
                 }
 
                 &>ul {
-                    padding-left: 1rem;
+                    padding-left: 0;
+                }
+
+                & a {
+                    color: var(--grey-font);
+                    text-decoration: none;
+                    padding: 0.3rem 0;
+                    display: block;
+    
+                    &:hover {
+                        color: inherit;
+                        text-decoration: underline;
+                    }
                 }
             }
         }
