@@ -487,7 +487,7 @@ body {
                 }
             }
 
-            &>ul{
+            &>ul {
                 padding-left: 0.5rem;
             }
         }
@@ -503,12 +503,6 @@ body {
         display: none;
     }
 
-    & .time-post {
-        font-size: 1rem;
-        border-top: 1px solid var(--grey-divider);
-        padding: 0.5rem 0;
-    }
-
     & .title-article {
         font-size: 2rem;
         box-sizing: border-box;
@@ -516,10 +510,11 @@ body {
     }
 
     .footer-article {
+        display: inline-block;
         border-top: 1px solid var(--grey-divider);
         border-bottom: 1px solid var(--grey-divider);
-        margin: 1rem 0;
-        padding: 0.5rem 0;
+        margin: 1.5rem 0;
+        padding: 1.5rem 0;
 
         & .tags,
         & .categories {
@@ -534,6 +529,10 @@ body {
                     text-decoration: underline;
                 }
             }
+        }
+
+        & .post-properties {
+            padding: 0.3rem 0;
         }
     }
 
@@ -642,7 +641,8 @@ body {
                 padding: 0.5rem;
                 border-radius: 0.3rem;
 
-                & ul, & li {
+                & ul,
+                & li {
                     list-style: none;
                 }
 
@@ -655,7 +655,7 @@ body {
                     text-decoration: none;
                     padding: 0.3rem 0;
                     display: block;
-    
+
                     &:hover {
                         color: inherit;
                         text-decoration: underline;
