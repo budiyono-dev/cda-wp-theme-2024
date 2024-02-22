@@ -633,6 +633,14 @@ figcaption {
         display: none;
     }
 
+    .excerpt {
+        word-wrap: break-word;
+    }
+
+    .nav-links > * {
+        display: inline-block;
+    }
+
     .main-content {
         width: 100%;
         padding: 0 1rem;
