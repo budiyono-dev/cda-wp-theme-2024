@@ -2,20 +2,20 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <?php 
+    <?php
         $title;
         if (is_home()) {
             $title = 'Home';
-        } else if (is_category()) {
+        } elseif (is_category()) {
             $title = get_the_category()[0]->name;
-        } else if (is_tag()) {
+        } elseif (is_tag()) {
             $title = get_the_tags()[0]->name;
-        } else if (is_archive()) {
+        } elseif (is_archive()) {
             $title = strip_tags(get_the_archive_title());
-        }else {
+        } else {
             $title = get_the_title();
         }
-        // var_dump($title);
+        
         if (is_null($title)) {
             $title = '';
         }

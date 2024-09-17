@@ -11,7 +11,7 @@
                 wp_nav_menu([
                     'theme_location' => 'home_slide_menu',
                     'container_id'   => '',
-                    'container'      => '', 
+                    'container'      => '',
                     'fallback_cb'    => 'cda_fallback_category_menu_home',
                     'depth'          => 1,
                 ]);
