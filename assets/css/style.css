@@ -103,7 +103,6 @@ body {
 
 .content {
     display: flex;
-    /* padding: 0 0.5rem; */
     justify-content: center;
     min-height: 80vh;
     width: 100%;
@@ -111,7 +110,7 @@ body {
 
 .main-content {
     padding: 0 0.5rem;
-    width: 50%;
+    width: 70vw;
     margin: 0 5%;
     box-sizing: border-box;
 
@@ -120,6 +119,10 @@ body {
         font-size: 1rem;
         line-height: 1.5;
     }
+}
+
+.main-content li {
+    line-height: 1.5;
 }
 
 
