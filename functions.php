@@ -10,13 +10,26 @@ function enqueue_styles() {
     $dir = get_cda_env()['mode'] === 'development' ? '/assets/css/style.css' : '/dist/style.css'; 
     wp_register_style('cda-style', get_template_directory_uri() . $dir, array(), false);
     wp_enqueue_style('cda-style');
+
+//    $dir = '/assets/fontawesome/css/fontawesome.min.css';
+//    wp_register_style('facss', get_template_directory_uri() . $dir, array(), false);
+//    wp_enqueue_style('facss');
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
 function load_js(){	
     $dir = get_cda_env()['mode'] === 'development' ? '/assets/js/index.js' : '/dist/index.min.js'; 
-    wp_register_script('main', get_template_directory_uri() . $dir, array(), false, true);
-    wp_enqueue_script('main');
+    $scripts = array(
+        'main' => $dir,
+        'fabrand' => '/assets/fontawesome/js/brands.min.js',
+        'fasolid' => '/assets/fontawesome/js/solid.min.js',
+        'fa' => '/assets/fontawesome/js/fontawesome.min.js'
+    );
+
+    foreach($scripts as $key => $s) {
+        wp_register_script($key, get_template_directory_uri() . $s, array('jquery'), false, true);
+        wp_enqueue_script($key);
+    }
 }
 add_action('wp_enqueue_scripts', 'load_js');
 

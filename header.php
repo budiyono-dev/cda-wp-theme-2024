@@ -29,7 +29,8 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div class="container">
-        <header class="main-header">
+        <?php get_template_part('parts/header');?>
+        <!-- <header class="main-header">
             <div class="brand-menu">
             <?php if (is_home()) : ?>
                 <h1 class="brand">
@@ -56,4 +57,4 @@
             ]);
             ?>
         </header>
-
+-->
