@@ -2,7 +2,7 @@
 
 function get_cda_env(){
     return [
-        'mode' => 'production',
+        'mode' => 'development',
     ];
 }
 
@@ -17,9 +17,6 @@ function load_js(){
     $dir = get_cda_env()['mode'] === 'development' ? '/assets/js/index.js' : '/dist/index.min.js';
     $scripts = array(
         'main' => $dir,
-        'fabrand' => '/assets/fontawesome/js/brands.min.js',
-        'fasolid' => '/assets/fontawesome/js/solid.min.js',
-        'fa' => '/assets/fontawesome/js/fontawesome.min.js'
     );
 
     foreach ($scripts as $key => $s) {
