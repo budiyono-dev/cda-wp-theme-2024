@@ -2,7 +2,7 @@
 
 function get_cda_env(){
     return [
-        'mode' => 'development', 
+        'mode' => 'development',
     ];
 }
 
@@ -13,10 +13,16 @@ function enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 
-function load_js(){	
-    $dir = get_cda_env()['mode'] === 'development' ? '/assets/js/index.js' : '/dist/index.min.js'; 
-    wp_register_script('main', get_template_directory_uri() . $dir, array(), false, true);
-    wp_enqueue_script('main');
+function load_js(){
+    $dir = get_cda_env()['mode'] === 'development' ? '/assets/js/index.js' : '/dist/index.min.js';
+    $scripts = array(
+        'main' => $dir,
+    );
+
+    foreach ($scripts as $key => $s) {
+        wp_register_script($key, get_template_directory_uri() . $s, array('jquery'), false, true);
+        wp_enqueue_script($key);
+    }
 }
 add_action('wp_enqueue_scripts', 'load_js');
 

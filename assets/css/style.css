@@ -55,9 +55,7 @@ body {
         color: var(--white);
     }
 
-    & .menu-toggle {
-        display: none;
-    }
+
 
 
     & .brand {
@@ -627,6 +625,24 @@ body {
 figcaption {
     text-align: center;
 }
+
+.main-header .brand-menu .menu-toggle,
+.main-header .brand-menu .menu-close,
+.main-header .brand-menu .menu-toggle.hide,
+.main-header .brand-menu .menu-close.hide {
+    display: none;
+}
+.main-header .brand-menu .menu-toggle.show,
+.main-header .brand-menu .menu-close.show {
+    display: block;
+}
+@media only screen and (min-width: 600px) {
+    /** force hide in wide screen */
+    .main-header .brand-menu .menu-toggle.show,
+    .main-header .brand-menu .menu-close.show {
+        display: none;
+    }
+}
 /* =================== MOBILE CSS ===================== */
 
 @media only screen and (max-width: 600px) {
@@ -678,16 +694,28 @@ figcaption {
             }
         }
     }
-
-    .main-header {
+    .container .main-header {
         flex-direction: column;
-        /* align-items: end; */
-        padding: 0.5rem 1rem;
-
+        padding: 0 1rem;
+    }
+    .container .main-header #main-navbar {
+        position: absolute;
+        top: 0;
+        left: -300px;
+        z-index: 99;
+        background-color: var(--primary);
+        padding: 0 12px;
+        width: 300px;
+        height: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        transition: left 0.5s ease-in-out;
+    }
+    .main-header {
         & #main-navbar {
-            width: 100%;
-            max-height: 0px;
-            transition: max-height .3s;
+            /*width: 100%;*/
+            /*max-height: 0px;*/
+            /*transition: max-height .3s;*/
 
             &>ul {
                 padding: 0;
@@ -711,6 +739,17 @@ figcaption {
                 display: block;
                 font-size: 2.5rem;
                 cursor: pointer;
+                color: white;
+                width: 30px;
+                fill: var(--white);
+            }
+            & .menu-close {
+                display: none;
+                font-size: 2.5rem;
+                cursor: pointer;
+                color: white;
+                width: 30px;
+                fill: var(--white);
             }
         }
 
@@ -730,4 +769,8 @@ figcaption {
             }
         }
     }
+}
+
+.main-header #main-navbar.open{
+    left: 0;
 }
