@@ -11,7 +11,7 @@ function enqueue_styles() {
     wp_register_style('cda-style', get_template_directory_uri() . $dir, array(), false);
     wp_enqueue_style('cda-style');
 }
-add_action('wp_enqueue_scripts', 'enqueue_styles');
+add_action('wp_enqueue_scripts', 'enqueue_styles', 9);
 
 function load_js(){
     $dir = get_cda_env()['mode'] === 'development' ? '/assets/js/index.js' : '/dist/index.min.js';
