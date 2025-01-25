@@ -626,27 +626,40 @@ figcaption {
     text-align: center;
 }
 
-.main-header .brand-menu .menu-toggle,
-.main-header .brand-menu .menu-close,
-.main-header .brand-menu .menu-toggle.hide,
-.main-header .brand-menu .menu-close.hide {
-    display: none;
-}
 .main-header .brand-menu .menu-toggle.show,
 .main-header .brand-menu .menu-close.show {
     display: block;
 }
-@media only screen and (min-width: 600px) {
-    /** force hide in wide screen */
-    .main-header .brand-menu .menu-toggle.show,
-    .main-header .brand-menu .menu-close.show {
-        display: none;
-    }
+.main-header .brand-menu .menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+    width: 30px;
+    fill: var(--white);
 }
+.main-header #main-navbar .menu-close {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+    width: 30px;
+    fill: var(--white);
+    text-align: end;
+    width: 100%;
+    padding: 3px;
+}
+            
 /* =================== MOBILE CSS ===================== */
 
 @media only screen and (max-width: 600px) {
-
+    .main-header .brand-menu .menu-toggle {
+        display: block;
+    }
+    
+    .main-header #main-navbar .menu-close {
+        display: block;
+    }
     .side-left-content,
     .side-right-content {
         display: none;
@@ -701,11 +714,11 @@ figcaption {
     .container .main-header #main-navbar {
         position: absolute;
         top: 0;
-        left: -300px;
+        left: -100vw;
         z-index: 99;
         background-color: var(--primary);
         padding: 0 12px;
-        width: 300px;
+        width: 100vw;
         height: 100%;
         text-align: center;
         box-sizing: border-box;
@@ -734,23 +747,6 @@ figcaption {
             width: 100%;
             justify-content: space-between;
             align-items: center;
-
-            & .menu-toggle {
-                display: block;
-                font-size: 2.5rem;
-                cursor: pointer;
-                color: white;
-                width: 30px;
-                fill: var(--white);
-            }
-            & .menu-close {
-                display: none;
-                font-size: 2.5rem;
-                cursor: pointer;
-                color: white;
-                width: 30px;
-                fill: var(--white);
-            }
         }
 
     }
@@ -769,8 +765,10 @@ figcaption {
             }
         }
     }
+
+    .main-header #main-navbar.open{
+        left: 0;
+    }
 }
 
-.main-header #main-navbar.open{
-    left: 0;
-}
+
