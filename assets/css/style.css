@@ -634,7 +634,6 @@ figcaption {
     display: none;
     font-size: 2.5rem;
     cursor: pointer;
-    color: white;
     width: 30px;
     fill: var(--white);
 }
@@ -642,12 +641,16 @@ figcaption {
     display: none;
     font-size: 2.5rem;
     cursor: pointer;
-    color: white;
     width: 30px;
     fill: var(--white);
-    text-align: end;
     width: 100%;
     padding: 3px;
+}
+
+.main-header #main-navbar .menu-close svg {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
 }
             
 /* =================== MOBILE CSS ===================== */
@@ -726,10 +729,6 @@ figcaption {
     }
     .main-header {
         & #main-navbar {
-            /*width: 100%;*/
-            /*max-height: 0px;*/
-            /*transition: max-height .3s;*/
-
             &>ul {
                 padding: 0;
                 display: flex;
@@ -750,6 +749,18 @@ figcaption {
         }
 
     }
+    
+    .home-page .header-home-page .search-form-container .search-form  {
+        display: flex;
+        gap:10px;
+        box-sizing:border-box;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .home-page .header-home-page .search-form-container .search-form .search-field {
+        width: 70%;
+    }
+
 
     .footer {
         & #secondary-navbar {
