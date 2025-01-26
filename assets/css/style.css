@@ -640,11 +640,13 @@ figcaption {
 .main-header #main-navbar .menu-close {
     display: none;
     font-size: 2.5rem;
-    cursor: pointer;
     width: 30px;
     fill: var(--white);
     width: 100%;
     padding: 3px;
+    &>svg {
+        cursor: pointer;
+    }
 }
 
 .main-header #main-navbar .menu-close svg {
@@ -727,6 +729,10 @@ figcaption {
         box-sizing: border-box;
         transition: left 0.5s ease-in-out;
     }
+    
+    .main-header #main-navbar.open{
+        left: 0;
+    }
     .main-header {
         & #main-navbar {
             &>ul {
@@ -775,10 +781,6 @@ figcaption {
                 }
             }
         }
-    }
-
-    .main-header #main-navbar.open{
-        left: 0;
     }
 }
 
